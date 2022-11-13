@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "BK Mgr",
+  "description": "Tags bookmarks and search for them",
+  "version": "0.0.1",
+
+  "action": {
+    "default_icon": "./assets/default.png",
+    "default_popup": "./popup.html"
+  },
+
+  "background": {
+    "service_worker": "src/background.js"
+  },
+
+  "permissions": [
+    "bookmarks",
+    "tabs",
+    "storage"
+  ],
+  "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self';"
+  },
+
+  "icons": {
+    "128": "./assets/default.png"
+  }
+}

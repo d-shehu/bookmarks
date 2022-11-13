@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Bookmarks</title>
+  </head>
+  <body>
+    <script src="./3p/fuse.js"></script>
+
+    <h2>Bookmarks</h2>
+    <p>
+      A chrome extension that allows you to search bookmarks for specific
+      phrase, terms or fuzzy search.
+    </p>
+
+    <form id="searchBookmarksForm" class="example" style="margin:15px; text-align: left">
+      <input type="text" id="searchTerms" placeholder="Search.." name="searchTerms">
+      <button type="button" id="searchBookmarksButton"><i class="fa fa-search"></i></button>
+        <br><br>
+    </form>
+
+    <div style="margin:15px; text-align: left">
+      <input type="radio" name="searchType" id="searchTypeAny" value="any" checked="checked">Match Any
+      <input type="radio" name="searchType" id="searchTypeAll" value="all">Match All
+      <input type="radio" name="searchType" id="searchTypeExact" value="exact">Match Exact
+      &nbsp;&nbsp;&nbsp;<button id="loadSearchResults">Load Results</button>
+    </div>
+
+    <table id="searchResultsTable" border="0">
+    </table>
+
+    <ul id="myUL">
+      <li><span class="caret">Beverages</span>
+        <ul class="nested">
+          <li>
+                  Water
+                  <div class="chip">
+                    Main
+                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                  </div>
+                  <div class="chip">
+                    Secondary
+                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                  </div>
+          </li>
+          <li>Coffee</li>
+          <li><span class="caret">Tea</span>
+            <ul class="nested">
+              <li>Black Tea</li>
+              <li>White Tea</li>
+              <li><span class="caret">Green Tea</span>
+                <ul class="nested">
+                  <li>Sencha</li>
+                  <li>Gyokuro</li>
+                  <li>Matcha</li>
+                  <li>Pi Lo Chun</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>
